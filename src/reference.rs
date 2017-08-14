@@ -13,6 +13,7 @@ struct Refdb<'repo>(&'repo Repository);
 /// A structure to represent a git [reference][1].
 ///
 /// [1]: http://git-scm.com/book/en/Git-Internals-Git-References
+#[derive(Clone)]
 pub struct Reference<'repo> {
     raw: *mut raw::git_reference,
     _marker: marker::PhantomData<Refdb<'repo>>,
